@@ -1,10 +1,10 @@
 import { animated, SpringValue } from 'react-spring'
-import React, {FC, useCallback, useEffect, useMemo, useState} from 'react'
+import React, {FC,  useEffect, useMemo, useState} from 'react'
 import classes from './Analytics.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThunkAppDispatch } from '../../../store/authReducer'
 import { RootState } from '../../../store/store'
-import { analyticsType, cityGetAnalitics, getAnalyticsThunk } from '../../../store/cityReducer'
+import { analyticsType, cityGetAnalitics, getAnalyticsThunk, itIsChangeNowThunk } from '../../../store/cityReducer'
 import { Loader } from '../../../assets/components/Loader'
 import { NavButton } from './NavigationButtons'
 import { ExtendedInfo } from './Info/ExtendedInfo'
@@ -22,6 +22,7 @@ export const AnalyticsWrapper:FC<AnalitycsPropsType> = ({style}) => {
     const initialized = useSelector<RootState, boolean>(state => state.city.initialize)
     useEffect(() => {
         dispatch(getAnalyticsThunk())
+        dispatch(itIsChangeNowThunk())
         return () => {cityGetAnalitics([])
         }
     }, [dispatch])

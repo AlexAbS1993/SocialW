@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { Redirect } from "react-router"
 import { SpringValue } from "react-spring"
 import {animated} from 'react-spring'
 import { ThunkAppDispatch } from "../../../store/authReducer"
@@ -13,6 +14,7 @@ type WheaterAddWrapperPropTypes = {
     style: {
         opacity: SpringValue<number>;
     },
+    setCurrentPage: React.Dispatch<React.SetStateAction<"add" | "get">>
 }
 
 type FormType = {
@@ -63,12 +65,13 @@ const ExtendedCheckboxInput:FC<CheckboxType> = React.memo(({checked, id, changeH
     })
 
 
-export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style}) => {
+export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style, setCurrentPage}) => {
     const _id = useSelector<RootState, string>(state => state.auth.city._id)
     const city =  useSelector<RootState, string>(state => state.auth.city.name)
     const isLoading = useSelector<RootState, boolean>(state => state.city.isLoading)
     const notification = useSelector<RootState, string>(state => state.city.notification)
     const isChangeAlready = useSelector<RootState, boolean>(state => state.city.itIsChangeNow)
+    const [localRedirect, setLocalRedirect] = useState(false)
     const dispatch = useDispatch<ThunkAppDispatch>()
     useEffect(() => {
         dispatch(itIsChangeNowThunk())
@@ -86,7 +89,7 @@ export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style}) => {
             [id]:target
         })
     }
-    const sumbitHandler = async(e:React.FormEvent) => {
+    const sumbitHandler = (e:React.FormEvent) => {
         e.preventDefault()
         let data = {temperature: form.temperature, 
             tags: form.tags.split(" "), 
@@ -95,7 +98,7 @@ export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style}) => {
                 usually: form.usually,
                 sense: form.sense
             }}
-       await dispatch(addWheatherThunk(data))
+        dispatch(addWheatherThunk(data))
     }
     useEffect(() => {
         if (notification){
@@ -105,6 +108,7 @@ export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style}) => {
                 sense: "",
                 tags: ""
             })
+            setLocalRedirect(true)
         }
     }, [notification])
     const resetHandler = () => {
@@ -115,6 +119,14 @@ export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style}) => {
             tags: ""
         })
     }
+    useEffect(() => {
+        if (localRedirect){
+            setCurrentPage("get")
+        }
+        return () => {
+            setLocalRedirect(false)
+        }
+    }, [localRedirect])
     return (
         <animated.div style={style} className={classes.wrapper}>
             <div className={classes.formWrapper}>

@@ -59,7 +59,7 @@ export const MainSectionWrapper:FC = () => {
                         <div className={classes.middleWrapper}>
                         {
                             transition((style, item) => {
-                                return item === "add" ? <WheaterAddWrapper style={style}/> : <AnalyticsWrapper style={style}/>
+                                return item === "get" ?  <AnalyticsWrapper style={style}/> : <WheaterAddWrapper setCurrentPage={setCurrentPage} style={style} /> 
                             })
                         }
                         </div>

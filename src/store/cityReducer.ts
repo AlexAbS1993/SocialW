@@ -149,7 +149,6 @@ export const getCitiesThunk = () => async(dispatch: dispatchType) => {
         const response = await cityAPI.getCities()
         const responseData:getCityResponseType = response.data 
         dispatch({type:"GET_CITIES", data: responseData.cities})
-        dispatch(citySetNotificationAC(responseData.message))
     }
     catch(e){
         dispatch(cityErrorAC(e.response.data.message))
