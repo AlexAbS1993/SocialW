@@ -1,13 +1,100 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body{
+  font-size: calc(10px + .8vmax);
+  color: #262524;
+  font-family: 'Scada', sans-serif;
+  background-color: #d1ced8f5;
+}
+
+button{
+  font-size: calc(10px + .4vmax);
+  min-width: calc( 35px + 8vmax);
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+  min-height: 2.2vmax;
+  padding: 5px;
+  font-family: 'Scada', sans-serif;
+  outline-offset: 1px;
+  transition: .3s ease all;
+  border: 1px solid #66628f;
+  color: #66628f;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+
+
+button:hover {
+  transition: .3s ease all;
+  background-color: #7673949a;
+  color: #5347D3;
+}
+
+label{
+  font-size: calc(12px + .4vmax);
+}
+
+input{
+  min-width: 5vmax;
+  max-width: 100%;
+  min-height: 2vmax;
+  max-height: 60px;
+  border: none;
+  border-bottom: 2px solid rgba(108, 109, 91, 0.301);
+  padding-left: 10px;
+  outline: none;
+  transition: .3s ease all;
+  font-size: calc(10px + .4vmax);
+  background-color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+
+input:focus{
+  border-bottom: 2px solid rgba(66, 141, 151, 0.459);
+  transition: .3s ease all;
+  background-color: rgb(177, 197, 219);
+}
+
+a {
+  color: rgb(226, 114, 21);
+  text-decoration: none;
+  font-size: calc(8px + .5vmax);
+  display: block;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  background: linear-gradient(to right, #423b91, #837ae2);
+  transition: .4s all linear;
+  text-align: center;
+}
+
+a:visited{
+  color: rgb(226, 114, 21);
+}
+
+a:hover {
+  color: white;
+  transition: .4s all linear;
+}
+
+
+
+@media screen and (max-width: 400px) {
+  button {
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
+  label{
+    font-size: calc(14px + .4vmax);
+  }
 }

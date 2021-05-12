@@ -1,0 +1,74 @@
+.wrapper {
+    width: 100%;
+    height: calc(3vmax + 50px);
+    background-color: #5347d3;
+
+    position: relative;
+    animation: dropIcon ease 1.5s;
+}
+
+.iconWrapper {
+    width: calc(60px + 2vmax);
+    height: calc(60px + 2vmax);
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transition: .5s all linear;
+    animation: dropIcon ease 1s;
+}
+
+@media (max-width: 400px){
+    .iconWrapper {
+        position: absolute;
+        left: 5%
+    }
+}
+
+.iconWrapper:hover {
+    transform: scale(1.2);
+}
+
+.iconWrapper img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+@keyframes dropIcon {
+    0% {
+        transform: translateY(-100%)
+    };
+    100%{
+        transform: translateY(0%)
+    }
+}
+
+.title {
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    animation: titleShow 3s ease;
+    color: white;
+}
+
+.title a {
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+}
+
+.title h1 {
+    font-size: 1.8em;
+    text-shadow: 2px 2px 3px rgb(36, 36, 226);
+}
+
+@keyframes titleShow {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

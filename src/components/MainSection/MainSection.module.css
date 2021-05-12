@@ -1,0 +1,92 @@
+.wrapperForAll{
+    position: relative;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    border-radius: 20px;
+    border: 2px rgba(67, 67, 190, 0.671) solid;
+    background-color: white;
+    width: calc(120px + 30vmax);
+    height: calc(170px + 15vmax);
+    animation: wrapperShow .3s linear;
+    column-gap: 5px;
+    padding: 15px;
+}
+@media screen and (max-width: 770px) {
+    .wrapper {
+        width: calc(250px + 30vmax);
+        height: calc(200px + 15vmax);
+    }
+}
+@media screen and (max-width: 430px) {
+    .wrapper {
+        margin-top: 20px;
+        width: calc(100px + 27vmax);
+        height: calc(350px + 15vmax);
+        gap: 10px;
+    }
+}
+
+@keyframes wrapperShow {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.error {
+    position: absolute;
+    top: 0%;
+    right: 100%;
+    background-color: crimson;
+    padding: 5px;
+    height: fit-content;
+    min-height: 40px;
+    width: calc(120px + 3vmax);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.notification {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    background-color: rgb(9, 150, 21);
+    padding: 10px;
+    width: 180px;
+    height: fit-content;
+    min-height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+    .error {
+        top: 100%;
+        left: 20%;
+    }
+    .notification {
+        top: 100%;
+        left: 80%;
+    }
+}
+
+.middleWrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.activeButton {
+    background-color: indigo;
+    color: white;
+}
+
+.simpleButton {
+    background-color: initial;
+}

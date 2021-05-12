@@ -1,0 +1,43 @@
+.wrapper {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+}
+
+.loader {
+    width: 204px;
+    height: 204px;
+    border: burlywood 1px solid;
+    position: relative;
+    background-color: teal;
+    margin: 10px;
+}
+
+.borderLoader {
+    width: 200px;
+    height: 200px;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    background-color: transparent;
+    border: violet 3px solid;
+    clip-path: polygon(0% 0%, 20% 0%, 20% 20%, 0% 20%);
+    animation: borderGoing infinite ease 3s;
+}
+
+@keyframes borderGoing {
+    0%{
+        clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 0% 50%);
+    }
+    33%{
+        clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 50%);
+    }
+    66%{
+        clip-path: polygon(100% 100%, 50% 100%, 50% 50%, 100% 50%);
+    }
+    100%{
+        clip-path: polygon(0% 100%, 0% 50%, 50% 50%, 50% 100%);
+    }
+}

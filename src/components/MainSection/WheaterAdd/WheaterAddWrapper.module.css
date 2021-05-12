@@ -1,0 +1,24 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.formWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.inputCheckbox {
+     display: grid;
+     align-items: center; 
+     grid-template-columns: 3fr 1fr 2fr;
+     margin-top: 5px;
+    }
+
+.inputText {
+     display:grid;
+     align-items: center; 
+     grid-template-columns: 1fr 1fr;
+     margin-top: 5px;
+}

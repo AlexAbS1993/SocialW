@@ -1,0 +1,10 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.formWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}

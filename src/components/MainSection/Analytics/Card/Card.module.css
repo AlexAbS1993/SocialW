@@ -1,0 +1,111 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 25% 40% 20%;
+    border-radius: 5px;
+}
+
+.morning{
+    background: linear-gradient(230deg, rgb(243, 162, 40), rgb(0, 0, 250));
+}
+.night {
+    background: linear-gradient(to bottom, rgb(4, 4, 75), rgb(75, 75, 167));
+}
+.afternoon {
+    background: linear-gradient(210deg,  rgb(238, 245, 141), rgb(0, 0, 250));
+}
+.evening{
+    background: linear-gradient(210deg, rgb(189, 88, 63), rgb(84, 84, 146), rgb(57, 57, 75));
+}
+
+.title {
+    padding: 10px;
+}
+.usually {
+    padding: 15px;
+}
+
+.tagsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.inlineTag {
+    padding: 2px;
+    background-color: gray;
+    font-size: .7em;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 5px;
+    min-height: 20px;
+    min-width: 50px;
+    text-align: center;
+    line-height: 20px;
+}
+
+@media (max-width: 500px) {
+    .inlineTag{
+      min-height: 24px;
+      min-width: 35px;
+      line-height: 24px;
+      font-size: .8em;
+    }
+}
+
+.inlineTagDetails {
+    position: absolute;
+    bottom: 75%;
+    left:70%;
+    min-width: 1.3vmax;
+    min-height: 1.3vmax;
+    background-color: rgb(90, 38, 64);
+    border-radius: 50px;
+    font-size: calc(1px + .6vmax);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .inlineTagDetails{
+        font-size: calc(8px + .5vmax);
+        min-width: 3vmax;
+        min-height: 3vmax;
+    }
+}
+
+.navDayButtons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.navDayButtons button {
+    min-width: 60px;
+    min-height: 100%;
+    font-size: .5em;
+    color: white;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+
+@media (max-width: 800px) {
+    .navDayButtons button {
+        font-size: .8em;
+        min-height: 120%;
+    }
+}
+
+.activeButton {
+    background-color: indigo;
+    color: white;
+}
+
+.simpleButton {
+    background-color: initial;
+}
