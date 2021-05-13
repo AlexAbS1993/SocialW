@@ -15,7 +15,7 @@ body{
   background-color: #d1ced8f5;
 }
 
-button{
+/* button{
   font-size: calc(10px + .4vmax);
   min-width: calc( 35px + 8vmax);
   max-width: 250px;
@@ -39,7 +39,7 @@ button:hover {
   transition: .3s ease all;
   background-color: #7673949a;
   color: #5347D3;
-}
+} */
 
 label{
   font-size: calc(12px + .4vmax);

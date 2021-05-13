@@ -5,6 +5,7 @@ import { SpringValue } from "react-spring"
 import { Input } from "../Registration/Input"
 import { useDispatch } from "react-redux"
 import { loginizationThunk, ThunkAppDispatch } from "../../../../store/authReducer"
+import { Button } from "../../../../assets/components/Button"
 
 type RightSideWrapperType = {
     style: {opacity: SpringValue<number>;}
@@ -25,7 +26,7 @@ export const LoginWrapper:FC<RightSideWrapperType> = ({style}) => {
                 <form onSubmit={submitHandler}>
                     <Input label="Введите логин" placeholder="логин..." value={login} changeHandler={setLogin}/>
                     <Input type="password" label="Введите пароль" placeholder="пароль..." value={password} changeHandler={setPassword}/>
-                    <button type="submit">Зайти как {login ? login : "..."}</button>
+                    <Button type="submit" text={`Зайти как ${login ? login : "..."}`} />
                 </form>
         </animated.div>
     )

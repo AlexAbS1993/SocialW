@@ -8,6 +8,7 @@ import {  registrationThunk, setErrorAC, ThunkAppDispatch } from "../../../../st
 import { Input } from "./Input"
 import { RootState } from "../../../../store/store"
 import { citiesAndAreas } from "../../../../assets/RussianCity"
+import { Button } from "../../../../assets/components/Button"
 
 type registrationWrapperType = {
     style: {
@@ -57,8 +58,9 @@ export const RegistrationWrapper:FC<Pick<leftSideWrapperPropsType, "area"|"city"
                     <Input value={password} label={"Введите пароль"} placeholder={"пароль..."} changeHandler={setPassword} type={"password"}/>
                     <Input value={city} label={"Введите ваш город"} placeholder={"город..."} changeHandler={setCity}/>
                     <Input value={area} label={"Регион"} placeholder={"регион..."} changeHandler={setArea}/>
-                    <div><button type="submit" disabled={isLoading}>{isLoading ? "..." : "Зарегистрироваться"}</button>
-                        <button type="reset"> Сбросить </button>
+                    <div>
+                        <Button type="submit" disabled={isLoading} text={isLoading ? "..." : "Зарегистрироваться"} variant="medium" />
+                        <Button type="reset" text={"Сбросить"} variant="medium" />
                     </div>
                 </form>
             </div>

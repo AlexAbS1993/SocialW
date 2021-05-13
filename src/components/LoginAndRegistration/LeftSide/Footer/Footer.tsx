@@ -1,5 +1,6 @@
 import classes from "./Footer.module.css"
 import React, { FC } from "react"
+import { Button } from "../../../../assets/components/Button"
 
 type footerType = {
     currentPage: "login" | "registration",
@@ -10,10 +11,10 @@ export const Footer:FC<footerType> = ({currentPage, setCurrentPage}) => {
         <footer>
             <div className={classes.wrapper}>
                 <div className={classes.buttonWrapper}>
-                    <button value="login" onClick={() => {setCurrentPage("login")}}> Войти на сайт </button>
+                    <Button type="button" text="Войти на сайт" handler={() => {setCurrentPage("login")}}/>
                 </div>
                 <div className={classes.buttonWrapper}>
-                    <button value="registration" onClick={() => {setCurrentPage("registration")}} > Регистрация </button>
+                    <Button type="button" text="Регистрация" handler={() => {setCurrentPage("registration")}}/>
                 </div>
             </div>
         </footer>

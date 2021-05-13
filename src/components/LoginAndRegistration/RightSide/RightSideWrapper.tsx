@@ -26,12 +26,12 @@ export const RightSideWrapper: FC<RightSideWrapperType> = ({style, area, setArea
     const isLoading = useSelector<RootState, boolean>(state => state.city.isLoading)
     const citiesList = useMemo(() => {
         if (city.length > 0){
-           return citiesAndAreas.concat(cities).filter(e => new RegExp("^" + city, "i").test(e.name)).map(e => {
-                return <li key={`${e.name}${e.area}`} onClick={() => {setCity(e.name); setArea(e.area)}}>{e.name}, <small>{e.area}</small></li>
+           return citiesAndAreas.concat(cities).filter(e => new RegExp("^" + city, "i").test(e.name)).map((e,i) => {
+                return <li key={`${i}${e.name}${e.area}${i}`} onClick={() => {setCity(e.name); setArea(e.area)}}>{e.name}, <small>{e.area}</small></li>
             })
         }
     }, [city])
-    
+    console.log(cities)
 
     return (
         <animated.div className={classes.wrapper} style={style}>
