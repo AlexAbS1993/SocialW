@@ -1,6 +1,7 @@
 import classes from "./Card/Card.module.css";
 import { FC } from "react";
 import { analyticsType } from "../../../store/cityReducer";
+import { Button } from "../../../assets/components/Button";
 
 
 type NavButtonPropsType = {
@@ -21,8 +22,7 @@ type NavButtonPropsType = {
 
 export const NavButton:FC<NavButtonPropsType> = ({setCurrentDay, datesArray, currentDay}) => {
     const buttonsList = datesArray.map((e, i) => {
-        return <button key={e.day} onClick={() => {setCurrentDay({value: e.date, index: e.index})}} 
-        className={currentDay.value === e.date ? classes.activeButton : classes.simpleButton}>{e.date}</button>
+        return <Button key={e.day} handler={() => {setCurrentDay({value: e.date, index: e.index})}} active={currentDay.value === e.date} text={e.date}/>
     })
     return (
         <div>

@@ -13,17 +13,35 @@
     animation: wrapperShow .3s linear;
     column-gap: 5px;
     padding: 15px;
+    letter-spacing: .5px;
+    hyphens: auto;
+    word-break: break-all;
+}
+@media screen and (max-width: 1030px) {
+    .wrapper {
+        margin-bottom: 150px;
+        width: calc(400px + 32vmax);
+        height: calc(300px + 15vmax);
+    }
 }
 @media screen and (max-width: 770px) {
     .wrapper {
-        width: calc(250px + 30vmax);
+        width: calc(250px + 32vmax);
         height: calc(200px + 15vmax);
     }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 560px) {
     .wrapper {
-        margin-top: 20px;
-        width: calc(100px + 27vmax);
+        margin-top: 35px;
+        width: calc(100px + 32vmax);
+        height: calc(350px + 15vmax);
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .wrapper {
+        margin-top: 35px;
+        width: calc(100px + 28vmax);
         height: calc(350px + 15vmax);
         gap: 10px;
     }

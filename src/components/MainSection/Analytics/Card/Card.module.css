@@ -35,7 +35,7 @@
 }
 
 .inlineTag {
-    padding: 2px;
+    padding: 5px;
     background-color: gray;
     font-size: .7em;
     border-radius: 5px;
@@ -45,6 +45,9 @@
     min-width: 50px;
     text-align: center;
     line-height: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    letter-spacing: .5px;
 }
 
 @media (max-width: 500px) {
@@ -84,28 +87,10 @@
     gap: 5px;
 }
 
-.navDayButtons button {
-    min-width: 60px;
-    min-height: 100%;
-    font-size: .5em;
-    color: white;
-    border: 1px solid white;
-    overflow: hidden;
-}
-
 
 @media (max-width: 800px) {
     .navDayButtons button {
         font-size: .8em;
         min-height: 120%;
     }
-}
-
-.activeButton {
-    background-color: indigo;
-    color: white;
-}
-
-.simpleButton {
-    background-color: initial;
 }

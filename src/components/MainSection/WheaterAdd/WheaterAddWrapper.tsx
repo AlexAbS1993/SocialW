@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Redirect } from "react-router"
 import { SpringValue } from "react-spring"
 import {animated} from 'react-spring'
+import { Button } from "../../../assets/components/Button"
 import { ThunkAppDispatch } from "../../../store/authReducer"
 import { addWheatherThunk, itIsChangeNowThunk } from "../../../store/cityReducer"
 import { RootState } from "../../../store/store"
@@ -141,7 +142,7 @@ export const WheaterAddWrapper:FC<WheaterAddWrapperPropTypes> = ({style, setCurr
                     <ExtendedCheckboxInput label="Свойственно для времени года?" id="usually" checked={form.usually} changeHandler={changeHandler} type="checkbox"/>
                     <ExtendedInput label="Характер погоды (солнечно, дождливо, пасмурно)" id="sense" value={form.sense} changeHandler={changeHandler}/>
                     <ExtendedInput label="Ощущения от погоды и советы (через пробел)" id="tags" value={form.tags} changeHandler={changeHandler}/>
-                    <button disabled={isLoading} type="submit">{isLoading ? "..." : "Поделиться своим мнением"}</button>
+                    <Button disabled={isLoading} type="submit" text={isLoading ? "..." : "Поделиться своим мнением"}/>
                 </form>}
                 
             </div>

@@ -6,6 +6,7 @@ import {useTransition, animated} from 'react-spring'
 import { WheaterAddWrapper } from './WheaterAdd/WheaterAddWrapper'
 import { cityErrorAC, citySetNotificationAC } from '../../store/cityReducer'
 import { AnalyticsWrapper } from './Analytics/Analityc'
+import { Button } from '../../assets/components/Button'
 
 
 export const MainSectionWrapper:FC = () => {
@@ -53,8 +54,8 @@ export const MainSectionWrapper:FC = () => {
                 })}        
                     <div className={classes.wrapper}>
                         <div>
-                            <button onClick={() => {setCurrentPage("add")}} className={currentPage==="add" ? classes.activeButton : classes.simpleButton}> Поделитесь погодой </button>
-                            <button onClick={() => {setCurrentPage("get")}}className={currentPage==="get" ? classes.activeButton : classes.simpleButton}> Узнайте погоду </button>
+                            <Button handler={() => {setCurrentPage("add")}} active={currentPage==="add" ? true : false} text="Поделитесь погодой"/>
+                            <Button handler={() => {setCurrentPage("get")}} active={currentPage==="get" ? true : false} text="Узнайте погоду"/>
                         </div>
                         <div className={classes.middleWrapper}>
                         {

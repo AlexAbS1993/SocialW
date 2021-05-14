@@ -1,0 +1,32 @@
+.wrapper {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80px;
+    height: 40px;    
+}
+
+.wrapper>div>a {
+    padding: 0px;
+    background: none;
+}
+
+.wrapper>div>a>img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: .3s linear;
+}
+.imgStock {
+    filter: grayscale(.8);
+}
+
+.imgHovered {
+    filter: grayscale(0);
+}
+
+.imgUnhovered {
+    filter: blur(1px);
+}

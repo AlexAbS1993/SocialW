@@ -15,32 +15,6 @@ body{
   background-color: #d1ced8f5;
 }
 
-/* button{
-  font-size: calc(10px + .4vmax);
-  min-width: calc( 35px + 8vmax);
-  max-width: 250px;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
-  white-space: nowrap;
-  min-height: 2.2vmax;
-  padding: 5px;
-  font-family: 'Scada', sans-serif;
-  outline-offset: 1px;
-  transition: .3s ease all;
-  border: 1px solid #66628f;
-  color: #66628f;
-  margin-top: 5px;
-  cursor: pointer;
-}
-
-
-
-button:hover {
-  transition: .3s ease all;
-  background-color: #7673949a;
-  color: #5347D3;
-} */
-
 label{
   font-size: calc(12px + .4vmax);
 }
